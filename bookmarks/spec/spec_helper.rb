@@ -1,5 +1,6 @@
 ENV['RACK_ENV'] = 'test'
 require File.join(File.dirname(__FILE__), '..', 'app.rb')
+
 ENV['bookmarkdb'] = 'bookmark_manager_test'
 
 require 'capybara'
@@ -8,8 +9,13 @@ require 'rspec'
 
 Capybara.app = BookmarkManager
 
+require './spec/helper_methods'
 
-
+RSpec.configure do |config|
+  config.before(:each) do
+    truncate_test_db
+  end
+end
 
 
 
