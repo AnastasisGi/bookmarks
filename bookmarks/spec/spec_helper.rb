@@ -1,5 +1,6 @@
 ENV['RACK_ENV'] = 'test'
 require File.join(File.dirname(__FILE__), '..', 'app.rb')
+ENV['bookmarkdb'] = 'bookmark_manager_test'
 
 require 'capybara'
 require 'capybara/rspec'

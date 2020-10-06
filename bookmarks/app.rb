@@ -1,6 +1,8 @@
 require 'sinatra/base'
 require './lib/bookmark'
 
+ENV['bookmarkdb'] = 'bookmark_manager'
+
 class BookmarkManager < Sinatra::Base
 
   get '/' do

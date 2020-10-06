@@ -1,12 +1,11 @@
 require 'pg'
 
-
 class Bookmark
   def self.all
     begin
-      con = PG.connect :dbname => 'bookmark_manager', :user => 'student'
-      bookmarks=con.exec( "SELECT * FROM bookmarks" ) do |result|
-        result.map { |row| row["url"]}
+      con = PG.connect :dbname => ENV['bookmarkdb'] , :user => 'student'
+      bookmarks=con.exec("SELECT * FROM bookmarks") do |result|
+        result.map { |row| row["url"] }
       end
     rescue PG::Error => e
       puts e.message
