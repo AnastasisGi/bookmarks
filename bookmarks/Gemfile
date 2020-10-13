@@ -10,3 +10,5 @@ gem "rspec", "~> 3.9"
 gem "capybara", "~> 3.33"
 gem "sinatra", "~> 2.1"
 gem "pg"
+
+gem "launchy"
