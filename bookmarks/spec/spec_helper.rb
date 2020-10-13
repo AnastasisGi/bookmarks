@@ -1,12 +1,13 @@
-ENV['RACK_ENV'] = 'test'
+
+ENV['ENVIRONMENT'] = 'test'
 require File.join(File.dirname(__FILE__), '..', 'app.rb')
 
-ENV['bookmarkdb'] = 'bookmark_manager_test'
+# ENV['bookmarkdb'] = 'bookmark_manager_test'
 
 require 'capybara'
 require 'capybara/rspec'
 require 'rspec'
-
+require 'pg'
 Capybara.app = BookmarkManager
 
 require './spec/helper_methods'
